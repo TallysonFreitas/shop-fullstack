@@ -30,4 +30,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .text-gray-666{
+    color: #666666
+  }
 }
