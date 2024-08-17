@@ -14,7 +14,10 @@ export function Header() {
             <div className="container mx-auto p-4">
                 <ul className="flex gap-5">
                     {HeadMenuItems.map((each) => (
-                        <li className="text-gray-666" key={each}>
+                        <li
+                            className="text-gray-666 hover:text-gray-900"
+                            key={each}
+                        >
                             <a href="#">{each}</a>
                         </li>
                     ))}
