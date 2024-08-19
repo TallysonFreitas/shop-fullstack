@@ -1,4 +1,10 @@
-import { Header, LogosFront, ProductsDetails, ProductState } from './ui/Home'
+import {
+    Header,
+    LogosFront,
+    ProductsDetails,
+    ProductState,
+    RelatedProducts,
+} from './ui/Home'
 
 export default function Home() {
     return (
@@ -10,6 +16,7 @@ export default function Home() {
             </div>
             <div className="bg-gray-f77">
                 <ProductsDetails />
+                <RelatedProducts />
             </div>
         </>
     )
