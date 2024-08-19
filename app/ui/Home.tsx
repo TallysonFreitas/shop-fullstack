@@ -156,10 +156,12 @@ function ItemPlan({
     plan,
     coustInCents,
     benefits,
+    link,
 }: {
     plan: string
     coustInCents: number
     benefits: string[]
+    link: string
 }) {
     return (
         <div className="w-full p-8 flex flex-col gap-5 shadow-xl rounded-xl items-start">
@@ -182,7 +184,7 @@ function ItemPlan({
             </ul>
             <a
                 className="py-3 px-4 font-semibold bg-gray-f2f rounded-lg"
-                href="#"
+                href={link}
             >
                 Get Started
             </a>
@@ -201,6 +203,7 @@ export function Plans() {
                 'Insights Panel',
                 'Share Features',
             ],
+            link: '#',
         },
         {
             plan: 'Personal',
@@ -211,6 +214,7 @@ export function Plans() {
                 'Insights Panel',
                 'Share Features',
             ],
+            link: '#',
         },
         {
             plan: 'Personal',
@@ -221,6 +225,7 @@ export function Plans() {
                 'Insights Panel',
                 'Share Features',
             ],
+            link: '#',
         },
     ]
 
@@ -232,6 +237,7 @@ export function Plans() {
                     coustInCents={each.coustInCents}
                     plan={each.plan}
                     benefits={each.benefits}
+                    link={each.link}
                 />
             ))}
         </div>
