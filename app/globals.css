@@ -30,6 +30,9 @@ body {
     .text-balance {
         text-wrap: balance;
     }
+    .text-gray-333 {
+        color: #333333;
+    }
     .text-gray-666 {
         color: #666666;
     }
@@ -39,12 +42,13 @@ body {
     .text-gray-999 {
         color: #999999;
     }
-
     .max-w-800 {
         max-width: 800px;
     }
-
     .bg-gray-f77 {
         background-color: #f7f7f7;
+    }
+    .bg-gray-f2f {
+        background-color: #f2f2f2;
     }
 }
