@@ -77,9 +77,9 @@ export function ProductsDetails() {
                 height={356}
                 alt="imagem"
             />
-            <div className="flex flex-col gap-5 justify-center items-start">
+            <div className="flex flex-col gap-8 justify-center items-start">
                 <h2 className="font-bold text-4xl">Fast</h2>
-                <p className="font-medium text-xl text-gray-888">
+                <p className="font-medium text-xl text-gray-888 w-3/5">
                     You&apos;ve never made a website this fast before.
                 </p>
                 <a
@@ -89,9 +89,9 @@ export function ProductsDetails() {
                     Read More
                 </a>
             </div>
-            <div className="flex flex-col gap-5 justify-center items-start">
+            <div className="flex flex-col gap-8 justify-center items-start">
                 <h2 className="font-bold text-4xl">Easy</h2>
-                <p className="font-medium text-xl text-gray-888">
+                <p className="font-medium text-xl text-gray-888 w-3/5">
                     Works like the canvas tools you&apos;re familiar with.
                 </p>
                 <a
@@ -108,6 +108,43 @@ export function ProductsDetails() {
                 height={356}
                 alt="imagem"
             />
+        </div>
+    )
+}
+
+function ItemProduct() {
+    return (
+        <div className="rounded-2xl overflow-hidden shadow-lg">
+            <Image
+                className="w-full"
+                height={240}
+                width={320}
+                src={'https://placehold.co/320x240/png'}
+                alt="imagem"
+            />
+            <div className="p-8 bg-white flex flex-col gap-5 items-start">
+                <h3 className="font-semibold text-lg">Scaling Your Site</h3>
+                <p className="text-gray-666 w-4/5">
+                    Learn about hosting built for scale and reliability. for
+                    scale and reliability.
+                </p>
+                <a
+                    className="bg-gray-900 text-white text-sm font-semibold px-4 py-2 rounded-lg"
+                    href="#"
+                >
+                    Read More
+                </a>
+            </div>
+        </div>
+    )
+}
+
+export function RelatedProducts() {
+    return (
+        <div className="container mx-auto p-24 grid grid-cols-3 gap-5">
+            <ItemProduct />
+            <ItemProduct />
+            <ItemProduct />
         </div>
     )
 }
