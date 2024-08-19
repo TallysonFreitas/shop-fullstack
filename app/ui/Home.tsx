@@ -1,5 +1,6 @@
 import { CheckCircleIcon } from '@heroicons/react/16/solid'
 import Image from 'next/image'
+import { describe } from 'node:test'
 
 export function Header() {
     const HeadMenuItems = [
@@ -115,7 +116,17 @@ export function ProductsDetails() {
     )
 }
 
-function ItemProduct() {
+function ItemProduct({
+    prodTitle,
+    describe,
+    image,
+    link,
+}: {
+    prodTitle: string
+    describe: string
+    image: string
+    link: string
+}) {
     return (
         <div className="rounded-2xl overflow-hidden shadow-lg">
             <Image
@@ -125,15 +136,12 @@ function ItemProduct() {
                 src={'https://placehold.co/320x240/png'}
                 alt="imagem"
             />
-            <div className="p-8 bg-white flex flex-col gap-5 items-start">
-                <h3 className="font-semibold text-lg">Scaling Your Site</h3>
-                <p className="text-gray-666 w-4/5">
-                    Learn about hosting built for scale and reliability. for
-                    scale and reliability.
-                </p>
+            <div className="p-8 bg-white flex flex-col gap-5 items-start h-full">
+                <h3 className="font-semibold text-lg">{prodTitle}</h3>
+                <p className="text-gray-666">{describe}</p>
                 <a
                     className="bg-gray-900 text-white text-sm font-semibold px-4 py-2 rounded-lg"
-                    href="#"
+                    href={link}
                 >
                     Read More
                 </a>
@@ -143,11 +151,38 @@ function ItemProduct() {
 }
 
 export function RelatedProducts() {
+    const Data = [
+        {
+            prodTitle: 'Scaling Your Site',
+            describe: 'Learn about hosting built for scale and reliability.',
+            image: '',
+            link: '#',
+        },
+        {
+            prodTitle: 'Optimize for SEO',
+            describe:
+                'Learn how Framer can optimize your site for search engines.',
+            image: '',
+            link: '#',
+        },
+        {
+            prodTitle: 'CMS Examples',
+            describe: 'Get inspired by blogs, job openings, events and more.',
+            image: '',
+            link: '#',
+        },
+    ]
     return (
         <div className="container mx-auto p-24 grid grid-cols-3 gap-5">
-            <ItemProduct />
-            <ItemProduct />
-            <ItemProduct />
+            {Data.map((each) => (
+                <ItemProduct
+                    key={each.prodTitle}
+                    prodTitle={each.prodTitle}
+                    describe={each.describe}
+                    image={each.image}
+                    link={each.link}
+                />
+            ))}
         </div>
     )
 }
