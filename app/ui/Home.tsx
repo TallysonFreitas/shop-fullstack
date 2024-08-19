@@ -152,41 +152,33 @@ export function RelatedProducts() {
     )
 }
 
-function ItemPlan() {
+function ItemPlan({
+    plan,
+    coustInCents,
+    benefits,
+}: {
+    plan: string
+    coustInCents: number
+    benefits: string[]
+}) {
     return (
         <div className="w-full p-8 flex flex-col gap-5 shadow-xl rounded-xl items-start">
-            <p className="text-gray-666 font-semibold text-sm">Personal</p>
+            <p className="text-gray-666 font-semibold text-sm">{plan}</p>
             <p className="text-gray-333 text-5xl font-bold">
-                $5
+                ${coustInCents / 100}
                 <span className="text-gray-666 text-sm font-semibold">
                     p/month
                 </span>
             </p>
             <ul className="flex flex-col gap-3 py-5">
-                <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="text-gray-333 size-7" />
-                    <span className="text-sm text-gray-333 font-semibold">
-                        1 projects
-                    </span>
-                </li>
-                <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="text-gray-333 size-7" />
-                    <span className="text-sm text-gray-333 font-semibold">
-                        Analytics
-                    </span>
-                </li>
-                <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="text-gray-333 size-7" />
-                    <span className="text-sm text-gray-333 font-semibold">
-                        Insights Panel
-                    </span>
-                </li>
-                <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="text-gray-333 size-7" />
-                    <span className="text-sm text-gray-333 font-semibold">
-                        Share Features
-                    </span>
-                </li>
+                {benefits.map((each) => (
+                    <li className="flex items-center gap-2" key={each}>
+                        <CheckCircleIcon className="text-gray-333 size-7" />
+                        <span className="text-sm text-gray-333 font-semibold">
+                            {each}
+                        </span>
+                    </li>
+                ))}
             </ul>
             <a
                 className="py-3 px-4 font-semibold bg-gray-f2f rounded-lg"
@@ -199,11 +191,49 @@ function ItemPlan() {
 }
 
 export function Plans() {
+    const PlansData = [
+        {
+            plan: 'Personal',
+            coustInCents: 500,
+            benefits: [
+                '1 projects',
+                'Analytics',
+                'Insights Panel',
+                'Share Features',
+            ],
+        },
+        {
+            plan: 'Personal',
+            coustInCents: 1000,
+            benefits: [
+                '2 projects',
+                'Analytics',
+                'Insights Panel',
+                'Share Features',
+            ],
+        },
+        {
+            plan: 'Personal',
+            coustInCents: 5000,
+            benefits: [
+                'Unlimited Projects',
+                'Analytics',
+                'Insights Panel',
+                'Share Features',
+            ],
+        },
+    ]
+
     return (
         <div className="container mx-auto p-24 grid grid-cols-3 text-sm gap-5">
-            <ItemPlan />
-            <ItemPlan />
-            <ItemPlan />
+            {PlansData.map((each) => (
+                <ItemPlan
+                    key={each.plan}
+                    coustInCents={each.coustInCents}
+                    plan={each.plan}
+                    benefits={each.benefits}
+                />
+            ))}
         </div>
     )
 }
