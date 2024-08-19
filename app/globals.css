@@ -45,6 +45,9 @@ body {
     .max-w-800 {
         max-width: 800px;
     }
+    .bg-gray-222 {
+        background-color: #222222;
+    }
     .bg-gray-f77 {
         background-color: #f7f7f7;
     }

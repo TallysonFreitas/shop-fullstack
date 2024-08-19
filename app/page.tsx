@@ -1,4 +1,5 @@
 import {
+    Footer,
     Header,
     Login,
     LogosFront,
@@ -26,6 +27,7 @@ export default function Home() {
             <div className="bg-gray-f77">
                 <Login />
             </div>
+            <Footer />
         </>
     )
 }

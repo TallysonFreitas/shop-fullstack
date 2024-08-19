@@ -1,6 +1,5 @@
 import { CheckCircleIcon } from '@heroicons/react/16/solid'
 import Image from 'next/image'
-import { describe } from 'node:test'
 
 export function Header() {
     const HeadMenuItems = [
@@ -73,7 +72,7 @@ export function LogosFront() {
 
 export function ProductsDetails() {
     return (
-        <div className="container mx-auto p-24 grid grid-cols-2 gap-8">
+        <div className="container mx-auto py-24 px-12 lg:px-24 grid grid-cols-2 gap-8">
             <Image
                 src={'https://placehold.co/500x356/png'}
                 className="w-full rounded-xl"
@@ -173,7 +172,7 @@ export function RelatedProducts() {
         },
     ]
     return (
-        <div className="container mx-auto p-24 grid grid-cols-3 gap-5">
+        <div className="container mx-auto py-24 px-10 lg:px-24 grid grid-cols-3 gap-5">
             {Data.map((each) => (
                 <ItemProduct
                     key={each.prodTitle}
@@ -265,7 +264,7 @@ export function Plans() {
     ]
 
     return (
-        <div className="container mx-auto p-24 grid grid-cols-3 text-sm gap-5">
+        <div className="container mx-auto py-24 px-10 lg:px-24 grid grid-cols-3 text-sm gap-5">
             {PlansData.map((each) => (
                 <ItemPlan
                     key={each.plan}
@@ -290,5 +289,19 @@ export function Login() {
                 Get Started
             </a>
         </div>
+    )
+}
+
+export function Footer() {
+    return (
+        <footer className="bg-gray-222">
+            <div className="container mx-auto flex justify-between p-24 text-white">
+                <p>© Framer Inc. 2023</p>
+                <ul className="flex gap-4">
+                    <li>Instagram</li>
+                    <li>Facebook</li>
+                </ul>
+            </div>
+        </footer>
     )
 }
