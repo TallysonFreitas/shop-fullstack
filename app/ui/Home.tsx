@@ -1,4 +1,4 @@
-import { CheckCircleIcon } from '@heroicons/react/16/solid'
+import * as Icons from '@heroicons/react/16/solid'
 import Image from 'next/image'
 
 export function Header() {
@@ -30,8 +30,10 @@ export function Header() {
 
 export function ProductState() {
     return (
-        <div className="container mx-auto py-24 flex flex-col gap-12 items-center max-w-800">
-            <h1 className="text-7xl font-bold pt-10">The Product Name</h1>
+        <div className="container mx-auto px-8 md:px-12 lg:px-0 py-24 flex flex-col gap-8 md:gap-12 items-center max-w-800">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold pt-10">
+                The Product Name
+            </h1>
             <Image
                 className="rounded-xl"
                 width={800}
@@ -41,7 +43,7 @@ export function ProductState() {
             />
             <p className="text-4xl font-semibold text-center">$49.99</p>
             <div className="flex flex-col gap-5 items-center">
-                <p className="w-3/5 text-center text-gray-888 text-2xl font-medium">
+                <p className="md:w-3/5 text-center text-gray-888 text-2xl font-medium">
                     Go from design to site with Framer, the web builder for
                     creative pros.
                 </p>
@@ -60,9 +62,13 @@ export function LogosFront() {
     const Logos = ['Logo', 'Logo', 'Logo', 'Logo']
 
     return (
-        <div className="container mx-auto flex justify-center items-center gap-10 pb-24">
+        <div className="container mx-auto grid grid-cols-2 md:flex justify-center items-center gap-10 pb-24 pl-4 md:pl-0">
             {Logos.map((each) => (
-                <p className="text-4xl text-gray-999 font-bold" key={each}>
+                <p
+                    className="text-4xl text-gray-999 font-bold flex items-center gap-2"
+                    key={each}
+                >
+                    <Icons.CubeTransparentIcon className="size-10" />
                     {each}
                 </p>
             ))}
@@ -72,7 +78,7 @@ export function LogosFront() {
 
 export function ProductsDetails() {
     return (
-        <div className="container mx-auto py-24 px-12 lg:px-24 grid grid-cols-2 gap-8">
+        <div className="container mx-auto py-24 px-12 lg:px-24 flex flex-col md:grid md:grid-cols-2 gap-8">
             <Image
                 src={'https://placehold.co/500x356/png'}
                 className="w-full rounded-xl"
@@ -92,7 +98,7 @@ export function ProductsDetails() {
                     Read More
                 </a>
             </div>
-            <div className="flex flex-col gap-8 justify-center items-start">
+            <div className="flex flex-col gap-8 justify-center items-start order-1 ">
                 <h2 className="font-bold text-4xl">Easy</h2>
                 <p className="font-medium text-xl text-gray-888 w-3/5">
                     Works like the canvas tools you&apos;re familiar with.
@@ -106,7 +112,7 @@ export function ProductsDetails() {
             </div>
             <Image
                 src={'https://placehold.co/500x356/png'}
-                className="w-full rounded-xl"
+                className="w-full rounded-xl md:order-2"
                 width={500}
                 height={356}
                 alt="imagem"
@@ -172,7 +178,7 @@ export function RelatedProducts() {
         },
     ]
     return (
-        <div className="container mx-auto py-24 px-10 lg:px-24 grid grid-cols-3 gap-5">
+        <div className="container mx-auto py-24 px-10 lg:px-24 flex flex-col md:grid md:grid-cols-3 gap-5">
             {Data.map((each) => (
                 <ItemProduct
                     key={each.prodTitle}
@@ -209,7 +215,7 @@ function ItemPlan({
             <ul className="flex flex-col gap-3 py-5">
                 {benefits.map((each) => (
                     <li className="flex items-center gap-2" key={each}>
-                        <CheckCircleIcon className="text-gray-333 size-7" />
+                        <Icons.CheckCircleIcon className="text-gray-333 size-7" />
                         <span className="text-sm text-gray-333 font-semibold">
                             {each}
                         </span>
@@ -264,7 +270,7 @@ export function Plans() {
     ]
 
     return (
-        <div className="container mx-auto py-24 px-10 lg:px-24 grid grid-cols-3 text-sm gap-5">
+        <div className="container mx-auto py-24 px-8 md:px-10 flex flex-col lg:px-24 md:grid md:grid-cols-3 text-sm gap-5">
             {PlansData.map((each) => (
                 <ItemPlan
                     key={each.plan}
@@ -295,9 +301,9 @@ export function Login() {
 export function Footer() {
     return (
         <footer className="bg-gray-222">
-            <div className="container mx-auto flex justify-between p-24 text-white">
+            <div className="container mx-auto flex flex-col gap-5 md:gap-0 md:flex-row justify-between p-24 text-white">
                 <p>© Framer Inc. 2023</p>
-                <ul className="flex gap-4">
+                <ul className="flex flex-col md:flex-row gap-4">
                     <li>Instagram</li>
                     <li>Facebook</li>
                 </ul>
