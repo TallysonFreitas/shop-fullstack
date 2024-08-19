@@ -1,3 +1,4 @@
+import { CheckCircleIcon } from '@heroicons/react/16/solid'
 import Image from 'next/image'
 
 export function Header() {
@@ -147,6 +148,62 @@ export function RelatedProducts() {
             <ItemProduct />
             <ItemProduct />
             <ItemProduct />
+        </div>
+    )
+}
+
+function ItemPlan() {
+    return (
+        <div className="w-full p-8 flex flex-col gap-5 shadow-xl rounded-xl items-start">
+            <p className="text-gray-666 font-semibold text-sm">Personal</p>
+            <p className="text-gray-333 text-5xl font-bold">
+                $5
+                <span className="text-gray-666 text-sm font-semibold">
+                    p/month
+                </span>
+            </p>
+            <ul className="flex flex-col gap-3 py-5">
+                <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="text-gray-333 size-7" />
+                    <span className="text-sm text-gray-333 font-semibold">
+                        1 projects
+                    </span>
+                </li>
+                <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="text-gray-333 size-7" />
+                    <span className="text-sm text-gray-333 font-semibold">
+                        Analytics
+                    </span>
+                </li>
+                <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="text-gray-333 size-7" />
+                    <span className="text-sm text-gray-333 font-semibold">
+                        Insights Panel
+                    </span>
+                </li>
+                <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="text-gray-333 size-7" />
+                    <span className="text-sm text-gray-333 font-semibold">
+                        Share Features
+                    </span>
+                </li>
+            </ul>
+            <a
+                className="py-3 px-4 font-semibold bg-gray-f2f rounded-lg"
+                href="#"
+            >
+                Get Started
+            </a>
+        </div>
+    )
+}
+
+export function Plans() {
+    return (
+        <div className="container mx-auto p-24 grid grid-cols-3 text-sm gap-5">
+            <ItemPlan />
+            <ItemPlan />
+            <ItemPlan />
         </div>
     )
 }
