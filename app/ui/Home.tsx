@@ -29,7 +29,7 @@ export function Header() {
 
 export function ProductState() {
     return (
-        <div className="container mx-auto py-24 flex flex-col gap-10 items-center max-w-800">
+        <div className="container mx-auto py-24 flex flex-col gap-12 items-center max-w-800">
             <h1 className="text-7xl font-bold pt-10">The Product Name</h1>
             <Image
                 className="rounded-xl"
@@ -39,16 +39,18 @@ export function ProductState() {
                 alt="iamgem"
             />
             <p className="text-4xl font-semibold text-center">$49.99</p>
-            <p className="w-1/2 text-center text-gray-888 text-2xl font-medium">
-                Pequena descricao sobre o Produto
-            </p>
-
-            <a
-                className="py-2 px-4 text-white bg-green-600 transition duration-500 ease-in-out hover:bg-green-700 rounded-lg w-28 text-center font-semibold shadow-lg"
-                href="#"
-            >
-                Buy Now
-            </a>
+            <div className="flex flex-col gap-5 items-center">
+                <p className="w-3/5 text-center text-gray-888 text-2xl font-medium">
+                    Go from design to site with Framer, the web builder for
+                    creative pros.
+                </p>
+                <a
+                    className="py-2 px-4 text-white bg-green-600 transition duration-500 ease-in-out hover:bg-green-700 rounded-lg w-28 text-center font-semibold shadow-lg"
+                    href="#"
+                >
+                    Buy Now
+                </a>
+            </div>
         </div>
     )
 }
