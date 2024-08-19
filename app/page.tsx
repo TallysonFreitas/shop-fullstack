@@ -1,6 +1,7 @@
 import {
     Header,
     LogosFront,
+    Plans,
     ProductsDetails,
     ProductState,
     RelatedProducts,
@@ -9,14 +10,17 @@ import {
 export default function Home() {
     return (
         <>
+            <Header />
             <div className="bg-white">
-                <Header />
                 <ProductState />
                 <LogosFront />
             </div>
             <div className="bg-gray-f77">
                 <ProductsDetails />
                 <RelatedProducts />
+            </div>
+            <div className="bg-white">
+                <Plans />
             </div>
         </>
     )
