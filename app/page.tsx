@@ -1,5 +1,6 @@
 import {
     Header,
+    Login,
     LogosFront,
     Plans,
     ProductsDetails,
@@ -21,6 +22,9 @@ export default function Home() {
             </div>
             <div className="bg-white">
                 <Plans />
+            </div>
+            <div className="bg-gray-f77">
+                <Login />
             </div>
         </>
     )

@@ -278,3 +278,17 @@ export function Plans() {
         </div>
     )
 }
+
+export function Login() {
+    return (
+        <div className="container mx-auto flex flex-col justify-center items-center gap-8 p-24">
+            <h2 className="text-center text-5xl font-bold">Sign up today.</h2>
+            <a
+                className="bg-gray-800 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-2xl"
+                href="#"
+            >
+                Get Started
+            </a>
+        </div>
+    )
+}
