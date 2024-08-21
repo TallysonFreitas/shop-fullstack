@@ -1,6 +1,4 @@
 import {
-    Footer,
-    Header,
     Login,
     LogosFront,
     Plans,
@@ -12,7 +10,6 @@ import {
 export default function Home() {
     return (
         <>
-            <Header />
             <div className="bg-white">
                 <ProductState />
                 <LogosFront />
@@ -27,7 +24,6 @@ export default function Home() {
             <div className="bg-gray-f77">
                 <Login />
             </div>
-            <Footer />
         </>
     )
 }
